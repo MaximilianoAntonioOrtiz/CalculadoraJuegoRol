@@ -1,5 +1,4 @@
 import personajes.Personaje;
-import personajes.PersonajePublico;
 
 import java.util.Scanner;
 
@@ -10,18 +9,38 @@ public class Main {
     public static void main(String[] args) {
         Personaje personaje1 = new Personaje();
         Scanner entrada = new Scanner(System.in);
-        /*System.out.println("ingrese nombre");
+        System.out.println("ingrese nombre");
         personaje1.setNombrePersonaje(entrada.nextLine());
         System.out.println("ingrese vida Max");
         personaje1.setVidaMax(entrada.nextInt());
         int vidaActual = personaje1.getVidaMax();
         personaje1.setVidaActual(vidaActual);
-        System.out.println(personaje1.toString());
-        System.out.println("ingrese Daño recibido:");
-        personaje1.restaVida(entrada.nextInt());
-        System.out.println(personaje1.toString());*/
-        PersonajePublico personaje2 = new PersonajePublico();
-        personaje2.nombre = "mauri";
+        System.out.println(personaje1);
+        do {
+            System.out.println("Para restar vida presione 1 y para curarse presione 2");
+            int valor = entrada.nextInt();
 
+            switch (valor){
+                case 1:
+                System.out.println("ingrese Daño recibido:");
+                personaje1.restaVida(entrada.nextInt());
+                System.out.println(personaje1.toString());
+
+            break;
+            case 2:
+                System.out.println("ingrese curacion recibida:");
+                personaje1.sumaVida(entrada.nextInt());
+                System.out.println(personaje1.toString());
+                break;
+            default:
+                System.out.println("Opcion no valida");
         }
+
+    }
+
+        while(personaje1.getVidaActual()>-9);
+
+
+
+}
     }

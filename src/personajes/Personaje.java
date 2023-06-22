@@ -39,7 +39,22 @@ public class Personaje {
 
         int vida = this.vidaActual - resta;
         setVidaActual(vida);
+        if(vidaActual <= -10) {
+            System.out.println("El personaje esta muerto");
+        }
+//        while (this.vidaActual > -10){
+//            int vida = this.vidaActual - resta;
+//            setVidaActual(vida);
+//            System.out.println(vidaActual);
+//        }
     }
+
+    public void sumaVida(int suma){
+        int vida = this.vidaActual + suma;
+        setVidaActual(vida);
+    }
+
+
 
     @Override
     public String toString() {
